@@ -67,6 +67,19 @@ begin
 end
 ```
 
+### generate types
+
+To generate the types of the database we use the following command:
+Important -> is necessary to be logged in to supabase by [`npx supabase login`] and providing the access token by following the instructions on the terminal
+
+```bash
+pnpm run gen:types
+```
+
+
+The reference-id that we provide on the script can be found on the supabase dashboard in the general settings of the project
+
+
 #### user
 
 The public table of users have:
