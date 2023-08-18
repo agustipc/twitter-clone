@@ -23,8 +23,10 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 ## UI
 
-The UI is made with [tailwindcss](https://tailwindcss.com/) that is a CSS framework allowing to customize the CSS of the components realy quickly.
+The UI is mainly made with [tailwindcss](https://tailwindcss.com/) that is a CSS framework allowing to customize the CSS of the components realy quickly.
+In addition, we use [nextUI](https://nextui.org/), that builds on top of tailwind, we use it to have some specific components like the tweet cards.
 We use [Flowbite](https://flowbite.com/) to find some components.
+For the icons we are using [Tabler Icons](https://tabler-icons.io/)
 
 
 ## session storage
