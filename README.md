@@ -4,7 +4,7 @@ The database is made with [`supabase`](https://supabase.com)
 To use supabase with nextJS we use the [`@supabase/auth-helpers-nextjs`](https://supabase.com/docs/guides/auth/auth-helpers/nextjs#install-nextjs-auth-helpers-library) library
 
 
-## Start the project
+# Start the project
 
 First, install all dependencies:
 
@@ -21,7 +21,7 @@ pnpm run dev
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 
-## UI
+# UI
 
 The UI is mainly made with [tailwindcss](https://tailwindcss.com/) that is a CSS framework allowing to customize the CSS of the components realy quickly.
 In addition, we use [nextUI](https://nextui.org/), that builds on top of tailwind, we use it to have some specific components like the tweet cards.
@@ -29,7 +29,7 @@ We use [Flowbite](https://flowbite.com/) to find some components.
 For the icons we are using [Tabler Icons](https://tabler-icons.io/)
 
 
-## session storage
+# session storage
 
 We store the user session in cookies:
 - cookies are a bit more secure than localstorage
@@ -37,7 +37,7 @@ We store the user session in cookies:
 - supabase needs to read the session from the server so we use cookies
 
 
-## Async Server Component Typescript Error
+# Async Server Component Typescript Error
   
   When we use the `AsyncServerComponent` we have a typescript error. This is a known issue with Typescript and is being worked on.
   To fix this we need to add the following code before using an Async Server Compenent:
@@ -48,7 +48,7 @@ We store the user session in cookies:
   You can find the information [here](https://nextjs.org/docs/app/building-your-application/configuring/typescript#async-server-component-typescript-error)
 
 
-## Supabase
+# Supabase
 
 We have to create a public table of Users because there are no permissions that allow access to read the user.
 The table is refered of the auth user, using the uuid.
@@ -67,10 +67,10 @@ begin
 end
 ```
 
-### generate types
+### Generate types
 
 To generate the types of the database we use the following command:
-Important -> is necessary to be logged in to supabase by [`npx supabase login`] and providing the access token by following the instructions on the terminal
+Important -> is necessary to be logged in to supabase by `npx supabase login` and providing the access token by following the instructions on the terminal
 
 ```bash
 pnpm run gen:types
@@ -78,6 +78,21 @@ pnpm run gen:types
 
 
 The reference-id that we provide on the script can be found on the supabase dashboard in the general settings of the project
+
+
+### Server Actions
+
+Server Actions are currently in Alpha in supabase, so this can change in the future.
+
+Inside the method we need to specify that is only server usage by adding `'use server'` and we have to enable them on the `next.config.js` file:
+  
+```js
+const nextConfig = {
+  "experimental":{
+    "serverActions": true
+  }
+}
+```
 
 
 #### user
