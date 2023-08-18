@@ -82,7 +82,8 @@ The reference-id that we provide on the script can be found on the supabase dash
 
 ### Server Actions
 
-Server Actions are currently in Alpha in supabase, so this can change in the future.
+Server Actions are currently in Alpha by next.js, so this can change in the future. 
+more information on the [next.js documentation](https://nextjs.org/docs/app/building-your-application/data-fetching/server-actions)
 
 Inside the method we need to specify that is only server usage by adding `'use server'` and we have to enable them on the `next.config.js` file:
   
@@ -93,6 +94,7 @@ const nextConfig = {
   }
 }
 ```
+For the moment, we've created the compose-post.tsx component to restart the input after the post is created, but this is not the best solution. Hopping that the issue will be fixed soon by nextJS and Supabase.
 
 
 #### user
